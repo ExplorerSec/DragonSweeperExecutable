@@ -4,6 +4,7 @@ on:
   push:
     tags:
       - 'v*'          # 只有打了 v1.0.0 这种 tag 时才触发
+  workflow_dispatch:
 
 jobs:
   build:
