@@ -4,6 +4,7 @@ on:
   push:
     tags:
       - 'v*'          # 只有打了 v1.0.0 这种 tag 时才触发
+  workflow_dispatch:
 
 jobs:
   build:
@@ -50,7 +51,7 @@ jobs:
 
       # 6. 直接构建
       - name: Build Tauri App
-        run: tauri build --release
+        run: npm run tauri build
 
       # 7. 发布 linux
       - name: Upload artifact
