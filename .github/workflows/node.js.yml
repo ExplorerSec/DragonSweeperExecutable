@@ -54,19 +54,19 @@ jobs:
         run: npm run tauri build
 
       # 7. 发布 linux
-      - name: Upload artifact
+      - name: Upload Linux artifact
         if: runner.os == 'Linux'
         uses: actions/upload-artifact@v4
         with:
-          name: dragon-sweeper-app
+          name: DragonSweeper-linux-x86_64
           path: ./src-tauri/target/release/app
 
       # 8. 发布 Windows
-      - name: Upload artifact
+      - name: Upload Windows artifact
         if: runner.os == 'Windows'
         uses: actions/upload-artifact@v4
         with:
-          name: dragon-sweeper-app
+          name: DragonSweeper-Windows-x86_64
           path: ./src-tauri/target/release/app.exe
 
       # 6. Tauri 官方 Action：构建 + 打包
