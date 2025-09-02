@@ -50,8 +50,7 @@ jobs:
 
       # 6. 直接构建
       - name: Build Tauri App
-        run: npm run tauri build
-        run: echo "Running on: ${{ runner.os }}"
+        run: tauri build --release
 
       # 7. 发布 linux
       - name: Upload artifact
