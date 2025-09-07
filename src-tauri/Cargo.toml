@@ -23,3 +23,10 @@ serde = { version = "1.0", features = ["derive"] }
 log = "0.4"
 tauri = { version = "2.8.5", features = [] }
 tauri-plugin-log = "2"
+
+[profile.release]
+strip = true              # 自动 strip 符号表
+debug = false             # 不保留 debug 信息
+lto = true                # 启用链接时优化，进一步减小体积
+codegen-units = 1         # 单 codegen unit，优化更好
+panic = "abort"           # 更小，更快
